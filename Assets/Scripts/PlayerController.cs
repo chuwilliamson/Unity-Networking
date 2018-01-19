@@ -3,7 +3,7 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : NetworkBehaviour
 {
-
+    public PlayerInfo playerInfo;
     public GameObject _camera;
     public float speed = 6.0F;
     public float jumpSpeed = 8.0F;
@@ -66,6 +66,8 @@ public class PlayerController : NetworkBehaviour
 
         if (Input.GetButtonDown("Fire1"))
             CmdFire();
+        if (Input.GetButtonDown("Fire2"))
+            playerInfo.CmdChangeName("1");
     }
 
 
